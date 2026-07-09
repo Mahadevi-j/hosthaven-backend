@@ -3,8 +3,6 @@ package com.example.hosthaven.entity;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -15,15 +13,13 @@ public class BookingReservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "listing_id", nullable = false)
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private PropertyListing listing;
+    @ManyToOne(fetch = FetchType.EAGER)
+@JoinColumn(name = "listing_id", nullable = false)
+private PropertyListing listing;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "guest_id", nullable = false)
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    private SystemUser guest;
+@ManyToOne(fetch = FetchType.EAGER)
+@JoinColumn(name = "guest_id", nullable = false)
+private SystemUser guest;
 
     @Column(name = "check_in_date", nullable = false)
     private LocalDate checkInDate;
