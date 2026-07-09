@@ -1,0 +1,177 @@
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HostHaven - Owner Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/property.css">
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="logo">
+            <h2>HostHaven</h2>
+        </div>
+
+        <nav>
+
+            <a href="owner-dashboard.html">Dashboard</a>
+
+            <a href="profile.html">Profile</a>
+
+            <a href="bookings.html">Bookings</a>
+
+            <a href="#" onclick="logout()">Logout</a>
+
+        </nav>
+
+    </header>
+
+    <!-- Welcome Section -->
+
+    <section class="welcome">
+
+        <h1>Property Owner Dashboard</h1>
+
+        <p>
+            Welcome! Manage all your properties from one place.
+        </p>
+
+    </section>
+    <div class="owner-id-box">
+
+    <label><b>Enter Your Owner ID</b></label>
+
+    <input
+        type="number"
+        id="ownerId"
+        placeholder="Owner ID">
+
+    <button onclick="saveOwnerId()">
+
+        Save Owner ID
+
+    </button>
+
+</div>
+
+    <!-- Add Property Button -->
+
+    <section class="owner-actions">
+
+        <button id="showFormBtn">
+
+            + Add New Property
+
+        </button>
+
+    </section>
+
+    <!-- Property Form -->
+
+    <section id="propertyFormContainer" style="display:none;">
+
+        <form id="propertyForm">
+
+            <h2>Add / Update Property</h2>
+
+            <input
+                type="text"
+                id="title"
+                placeholder="Property Title"
+                required>
+
+            <textarea
+                id="description"
+                placeholder="Description"
+                rows="5"
+                required></textarea>
+
+            <input
+                type="text"
+                id="address"
+                placeholder="Address"
+                required>
+
+            <input
+                type="number"
+                id="basePrice"
+                placeholder="Price Per Night"
+                required>
+
+            <input
+                type="text"
+                id="benefits"
+                placeholder="Benefits (WiFi, Parking, AC...)"
+                required>
+
+            <button type="submit">
+
+                Save Property
+
+            </button>
+
+            <button
+                type="reset">
+
+                Clear
+
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- Owner Property List -->
+
+    <section class="owner-properties">
+
+        <h2>Your Properties</h2>
+
+        <div
+            id="ownerProperties"
+            class="property-grid">
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+
+            © 2026 HostHaven Property Rental Management System
+
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="js/api.js"></script>
+
+    <script src="js/property.js"></script>
+    <script>
+const role = localStorage.getItem("role");
+
+if (role !== "PROPERTY_OWNER") {
+
+    alert("Access Denied");
+
+    window.location.href = "dashboard.html";
+
+}
+</script>
+
+</body>
+
+</html>

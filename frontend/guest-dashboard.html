@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Guest Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<h1>Guest Dashboard</h1>
+
+<div class="form">
+
+<label>Enter Your Guest ID</label>
+
+<input
+type="number"
+id="guestId"
+placeholder="Enter Guest ID">
+
+<button onclick="saveGuestId()">
+
+Save Guest ID
+
+</button>
+
+</div>
+
+<hr>
+
+<div id="propertyContainer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="js/api.js"></script>
+
+<script src="js/property.js"></script>
+
+</body>
+
+</html>

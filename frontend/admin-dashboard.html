@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>HostHaven Admin Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h2>HostHaven Admin Panel</h2>
+
+    <nav>
+
+        <a href="admin-dashboard.html">Dashboard</a>
+
+        <a href="profile.html">Profile</a>
+
+        <a href="#" onclick="logout()">Logout</a>
+
+    </nav>
+
+</header>
+
+<section class="dashboard">
+
+    <h1>Hospitality Admin Dashboard</h1>
+
+    <div class="admin-buttons">
+
+        <button onclick="showProperties()">
+
+            Property Listings
+
+        </button>
+
+        <button onclick="showUsers()">
+
+            Users
+
+        </button>
+
+        <button onclick="showBookings()">
+
+            Bookings
+
+        </button>
+
+    </div>
+
+    <br>
+
+    <div id="adminContainer"></div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="js/api.js"></script>
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>
